@@ -34,14 +34,3 @@ export const findById = async (id) => {
     return rows[0]??null;
 };
 
-export const findall = async () => {
-    const [rows] = await pool.execute(
-        'SELECT id_users, email, nom, adresse, telephone, role, date_inscription FROM users'
-    );
-    return rows;
-};
-
-export const remove = async (id) => {
-  const [rows] = await db.execute("DELETE FROM users WHERE id = ?", [id]);
-  return rows.affectedRows === 1;
-};
