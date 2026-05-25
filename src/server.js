@@ -15,7 +15,6 @@ app.use(express.json());
 // Middlewares globaux
 app.use(cors({ origin: 'http://localhost:5173' }));
 
-
 // Exemple avec une route — à dupliquer pour chaque groupe de routes
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
