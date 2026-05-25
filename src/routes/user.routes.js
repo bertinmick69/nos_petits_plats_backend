@@ -10,12 +10,6 @@ const router = Router();
 
 router.get("/", authorize('admin'), UserController.getAllUsers);
 
-router.get("/:id", UserValidator.validateUserId, validate, UserController.getUserById);
-
-router.post("/", authorize('admin'), UserValidator.validateUpdateUser, validate, UserController.createUser);
-
-router.put("/:id", UserValidator.validateUserId, UserValidator.validateUpdateUser, validate, UserController.updateUser);
-
 router.delete("/:id", authorize('admin'), UserValidator.validateUserId, validate, UserController.deleteUser);
 
 export default router;
